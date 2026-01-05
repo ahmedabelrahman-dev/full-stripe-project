@@ -1,44 +1,104 @@
 [
-	{
-		"title": "Golang for Node.js Developers",
-		"description": "Build and Deploy a full stack app with Go and React",
-		"imageUrl": "https://i3.ytimg.com/vi/zw8z_o_kDqc/maxresdefault.jpg",
-		"price": 54.99
-	},
-	{
-		"title": "GraphQL Crash Course",
-		"description": "Build a full-stack MERN application with GraphQL. Learn to create efficient APIs, implement real-time subscriptions, and optimize data fetching.",
-		"imageUrl": "https://i3.ytimg.com/vi/Vr-QHtbmd38/maxresdefault.jpg",
-		"price": 34.99
-	},
-	{
-		"title": "Full Stack Social Media App",
-		"description": "Create a feature-rich social media application using React, Node.js, and MongoDB. Implement real-time updates, user interactions, and cloud image uploads.",
-		"imageUrl": "https://i3.ytimg.com/vi/G4V4xO9wyD8/maxresdefault.jpg",
-		"price": 69.99
-	},
-	{
-		"title": "Advanced MERN Authentication",
-		"description": "Master advanced authentication techniques in MERN stack applications. Cover email verification, password recovery, and enhanced security measures.",
-		"imageUrl": "https://i3.ytimg.com/vi/pmvEgZC55Cg/maxresdefault.jpg",
-		"price": 44.99
-	},
-	{
-		"title": "Build an E-commerce Store",
-		"description": "Dive into Next.js by building a complete e-commerce platform. Learn server-side rendering, API routes, and integrating with payment gateways.",
-		"imageUrl": "https://i3.ytimg.com/vi/sX57TLIPNx8/maxresdefault.jpg",
-		"price": 59.99
-	},
-	{
-		"title": "Build Your Own Twitter Clone",
-		"description": "Master TypeScript while creating a Twitter clone. This advanced course covers complex TypeScript features, real-time updates, and social media architecture.",
-		"imageUrl": "https://i3.ytimg.com/vi/4GUVz2psWUg/maxresdefault.jpg",
-		"price": 39.99
-	},
-	{
-		"title": "Build a Netflix Clone",
-		"description": "Learn React by building a fully functional Netflix clone. This course covers React hooks, state management, and integrating with a movie API.",
-		"imageUrl": "https://i3.ytimg.com/vi/gRroBZczKAU/maxresdefault.jpg",
-		"price": 29.99
-	}
+  {
+    "title": "Golang for Node.js Developers",
+    "description": "Build and Deploy a full stack app with Go and React",
+    "imageUrl": "https://i3.ytimg.com/vi/zw8z_o_kDqc/maxresdefault.jpg",
+    "price": 54.99
+  },
+  {
+    "title": "GraphQL Crash Course",
+    "description": "Build a full-stack MERN application with GraphQL. Learn to create efficient APIs, implement real-time subscriptions, and optimize data fetching.",
+    "imageUrl": "https://i3.ytimg.com/vi/Vr-QHtbmd38/maxresdefault.jpg",
+    "price": 34.99
+  },
+  {
+    "title": "Full Stack Social Media App",
+    "description": "Create a feature-rich social media application using React, Node.js, and MongoDB. Implement real-time updates, user interactions, and cloud image uploads.",
+    "imageUrl": "https://i3.ytimg.com/vi/G4V4xO9wyD8/maxresdefault.jpg",
+    "price": 69.99
+  },
+  {
+    "title": "Advanced MERN Authentication",
+    "description": "Master advanced authentication techniques in MERN stack applications. Cover email verification, password recovery, and enhanced security measures.",
+    "imageUrl": "https://i3.ytimg.com/vi/pmvEgZC55Cg/maxresdefault.jpg",
+    "price": 44.99
+  },
+  {
+    "title": "Build an E-commerce Store",
+    "description": "Dive into Next.js by building a complete e-commerce platform. Learn server-side rendering, API routes, and integrating with payment gateways.",
+    "imageUrl": "https://i3.ytimg.com/vi/sX57TLIPNx8/maxresdefault.jpg",
+    "price": 59.99
+  },
+  {
+    "title": "Build Your Own Twitter Clone",
+    "description": "Master TypeScript while creating a Twitter clone. This advanced course covers complex TypeScript features, real-time updates, and social media architecture.",
+    "imageUrl": "https://i3.ytimg.com/vi/4GUVz2psWUg/maxresdefault.jpg",
+    "price": 39.99
+  },
+  {
+    "title": "Build a Netflix Clone",
+    "description": "Learn React by building a fully functional Netflix clone. This course covers React hooks, state management, and integrating with a movie API.",
+    "imageUrl": "https://i3.ytimg.com/vi/gRroBZczKAU/maxresdefault.jpg",
+    "price": 29.99
+  },
+  {
+    "title": "React + Firebase: Build Real Apps",
+    "description": "Use React with Firebase for authentication, Firestore, and serverless functions to build production-ready apps.",
+    "imageUrl": "https://i3.ytimg.com/vi/Ke90Tje7VS0/maxresdefault.jpg",
+    "price": 49.99
+  },
+  {
+    "title": "TypeScript Mastery",
+    "description": "Deep dive into TypeScript types, generics, and patterns for large-scale applications.",
+    "imageUrl": "https://i3.ytimg.com/vi/BwuLxPH8IDs/maxresdefault.jpg",
+    "price": 39.99
+  },
+  {
+    "title": "Docker for Developers",
+    "description": "Containerize applications, write Dockerfiles, and streamline local development and CI workflows.",
+    "imageUrl": "https://i3.ytimg.com/vi/fqMOX6JJhGo/maxresdefault.jpg",
+    "price": 34.99
+  },
+  {
+    "title": "Kubernetes Essentials",
+    "description": "Learn core Kubernetes concepts: pods, services, deployments, and how to run apps in clusters.",
+    "imageUrl": "https://i3.ytimg.com/vi/PH-2FfFD2PU/maxresdefault.jpg",
+    "price": 59.99
+  },
+  {
+    "title": "Node.js Performance Tuning",
+    "description": "Profile and optimize Node.js apps for CPU, memory, and I/O-bound workloads.",
+    "imageUrl": "https://i3.ytimg.com/vi/8aGhZQkoFbQ/maxresdefault.jpg",
+    "price": 44.99
+  },
+  {
+    "title": "Modern CSS Layouts",
+    "description": "Master Flexbox, Grid, and responsive design techniques for modern UIs.",
+    "imageUrl": "https://i3.ytimg.com/vi/jV8B24rSN5o/maxresdefault.jpg",
+    "price": 24.99
+  },
+  {
+    "title": "Testing with Jest",
+    "description": "Write reliable unit and integration tests for JavaScript and TypeScript projects using Jest.",
+    "imageUrl": "https://i3.ytimg.com/vi/7r4xVDI2vho/maxresdefault.jpg",
+    "price": 29.99
+  },
+  {
+    "title": "Next.js Deep Dive",
+    "description": "Advanced Next.js patterns: routing, data fetching, middleware, and performance tuning.",
+    "imageUrl": "https://i3.ytimg.com/vi/Sklc_fQBmcs/maxresdefault.jpg",
+    "price": 64.99
+  },
+  {
+    "title": "AWS for Web Developers",
+    "description": "Practical AWS for deploying, scaling, and securing web applications with hands-on examples.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    "price": 69.99
+  },
+  {
+    "title": "Python for Web Development",
+    "description": "Build web apps with Python frameworks, REST APIs, and deployment strategies.",
+    "imageUrl": "https://i3.ytimg.com/vi/rfscVS0vtbw/maxresdefault.jpg",
+    "price": 39.99
+  }
 ]
