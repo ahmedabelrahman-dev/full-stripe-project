@@ -21,7 +21,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <main className="flex-grow container mx-auto px-4 py-16">
+      <main className="grow container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">
             Forge Your Path in Modern Development
@@ -45,7 +45,7 @@ export default async function Home() {
                     className="rounded-md object-cover"
                   />
                 </CardHeader>
-                <CardContent className="flex-grow">
+                <CardContent className="grow">
                   <CardTitle className="text-xl mb-2 hover:underline">
                     {course.title}
                   </CardTitle>

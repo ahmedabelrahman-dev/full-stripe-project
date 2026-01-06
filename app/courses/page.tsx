@@ -35,7 +35,7 @@ const page = async () => {
                   className="rounded-md object-cover"
                 />
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="grow">
                 <CardTitle className="text-xl mb-2 hover:underline">
                   {course.title}
                 </CardTitle>
