@@ -18,7 +18,7 @@ import {
   Lock,
   PlayCircle,
 } from 'lucide-react';
-// import PurchaseButton from '@/components/PurchaseButton';
+import PurchaseButton from '@/components/PurchaseButton';
 
 const CourseDetailPage = ({
   params,
@@ -30,13 +30,14 @@ const CourseDetailPage = ({
     : // fallback if React.use is not available at runtime
       // params may already be resolved
       (params as any);
+  const { courseId } = resolvedParams as { courseId: Id<'courses'> };
   const { user, isLoaded: isUserLoaded } = useUser();
 
   const userData = useQuery(api.users.getUserByClerkId, {
     clerkId: user?.id ?? '',
   });
   const courseData = useQuery(api.courses.getCourseById, {
-    courseId: resolvedParams.courseId,
+    courseId,
   });
 
   const userAccess = useQuery(
@@ -44,7 +45,7 @@ const CourseDetailPage = ({
     userData
       ? {
           userId: userData._id,
-          courseId: resolvedParams.courseId,
+          courseId,
         }
       : 'skip'
   ) || { hasAccess: false };
@@ -112,8 +113,7 @@ const CourseDetailPage = ({
                 <p className="text-2xl font-bold mb-4">
                   ${courseData.price.toFixed(2)}
                 </p>
-                {/* <PurchaseButton courseId={params.courseId} /> */}
-                <Button disabled>Purchase Button Coming Soon</Button>
+                <PurchaseButton courseId={courseId} />
               </div>
             </div>
           )}

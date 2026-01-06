@@ -13,7 +13,7 @@ import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight } from 'lucide-react';
-// import PurchaseButton from "@/components/PurchaseButton";
+import PurchaseButton from '@/components/PurchaseButton';
 
 export default async function Home() {
   const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
@@ -58,8 +58,7 @@ export default async function Home() {
                 </Badge>
 
                 <SignedIn>
-                  {/* <PurchaseButton courseId={course._id} /> */}
-                  <Button variant={'outline'}>Enroll Now</Button>
+                  <PurchaseButton courseId={course._id} />
                 </SignedIn>
 
                 <SignedOut>
