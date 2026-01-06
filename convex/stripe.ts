@@ -90,13 +90,13 @@ export const createProPlanCheckoutSession = action({
       throw new ConvexError('User not found');
     }
 
-    // // rate limit
-    // const rateLimitKey = `pro-plan-rate-limit:${user._id}`;
-    // const { success } = await ratelimit.limit(rateLimitKey);
-    // // if rate limit is exceeded, throw an error
-    // if (!success) {
-    // 	throw new Error(`Rate limit exceeded.`);
-    // }
+    // rate limit ..
+    const rateLimitKey = `pro-plan-rate-limit:${user._id}`;
+    const { success } = await ratelimit.limit(rateLimitKey);
+    // if rate limit is exceeded, throw an error
+    if (!success) {
+      throw new Error(`Rate limit exceeded.`);
+    }
 
     // get the price id
     let priceId;
