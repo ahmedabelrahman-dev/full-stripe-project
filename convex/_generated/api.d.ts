@@ -12,6 +12,7 @@ import type * as courses from "../courses.js";
 import type * as http from "../http.js";
 import type * as purchases from "../purchases.js";
 import type * as stripe from "../stripe.js";
+import type * as subscriptions from "../subscriptions.js";
 import type * as users from "../users.js";
 
 import type {
@@ -25,6 +26,7 @@ declare const fullApi: ApiFromModules<{
   http: typeof http;
   purchases: typeof purchases;
   stripe: typeof stripe;
+  subscriptions: typeof subscriptions;
   users: typeof users;
 }>;
 
