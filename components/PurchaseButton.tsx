@@ -7,7 +7,7 @@ import { api } from '../convex/_generated/api';
 import { Button } from './ui/button';
 import { Loader2Icon } from 'lucide-react';
 import { useState } from 'react';
-// import { toast } from "sonner";
+import { toast } from 'sonner';
 
 const PurchaseButton = ({ courseId }: { courseId: Id<'courses'> }) => {
   const { user } = useUser();
@@ -29,9 +29,8 @@ const PurchaseButton = ({ courseId }: { courseId: Id<'courses'> }) => {
   ) || { hasAccess: false };
 
   const handlePurchase = async () => {
-    if (!user) return;
-    // toast.error("Please log in to purchase", { id: "login-error" });
-    alert('Please log in to purchase');
+    if (!user)
+      return toast.error('Please log in to purchase', { id: 'login-error' });
     setIsLoading(true);
     try {
       const { checkoutUrl } = await createCheckoutSession({ courseId });
@@ -42,13 +41,11 @@ const PurchaseButton = ({ courseId }: { courseId: Id<'courses'> }) => {
       }
     } catch (error: any) {
       if (error.message.includes('Rate limit exceeded')) {
-        // toast.error("You've tried too many times. Please try again later.");
-        alert("You've tried too many times. Please try again later.");
+        toast.error("You've tried too many times. Please try again later.");
       } else {
-        // toast.error(
-        //   error.message || 'Something went wrong. Please try again later.'
-        // );
-        alert(error.message || 'Something went wrong. Please try again later.');
+        toast.error(
+          error.message || 'Something went wrong. Please try again later.'
+        );
       }
       console.log(error);
     } finally {
