@@ -2,7 +2,7 @@ import { ConvexError, v } from 'convex/values';
 import { action } from './_generated/server';
 import { api } from './_generated/api';
 import stripe from '../lib/stripe';
-// import ratelimit from "../src/lib/ratelimit";
+import ratelimit from '../lib/ratelimit';
 
 export const createCheckoutSession = action({
   args: { courseId: v.id('courses') },
@@ -24,12 +24,12 @@ export const createCheckoutSession = action({
     }
 
     // rate limit ..
-    // const rateLimitKey = `checkout-rate-limit:${user._id}`;
-    // const { success } = await ratelimit.limit(rateLimitKey);
-    /// if rate limit is exceeded, throw an error
-    // if (!success) {
-    // 	throw new Error(`Rate limit exceeded.`);
-    // }
+    const rateLimitKey = `checkout-rate-limit:${user._id}`;
+    const { success } = await ratelimit.limit(rateLimitKey);
+    // if rate limit is exceeded, throw an error
+    if (!success) {
+      throw new Error(`Rate limit exceeded.`);
+    }
 
     // get the course ..
     const course = await ctx.runQuery(api.courses.getCourseById, {
