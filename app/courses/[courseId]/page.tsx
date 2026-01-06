@@ -25,24 +25,35 @@ const CourseDetailPage = ({
 }: {
   params: { courseId: Id<'courses'> } | Promise<{ courseId: Id<'courses'> }>;
 }) => {
-  const resolvedParams = (React as any).use
-    ? (React as any).use(params)
-    : // fallback if React.use is not available at runtime
-      // params may already be resolved
-      (params as any);
-  const { courseId } = resolvedParams as { courseId: Id<'courses'> };
+  const [localParams, setLocalParams] = React.useState<{
+    courseId: Id<'courses'>;
+  } | null>(null);
+
+  React.useEffect(() => {
+    const p = params as any;
+    if (p && typeof p.then === 'function') {
+      p.then((resolved: any) => setLocalParams(resolved)).catch(() =>
+        setLocalParams(null)
+      );
+    } else {
+      setLocalParams(p ?? null);
+    }
+  }, [params]);
+
+  const courseId = localParams?.courseId as Id<'courses'> | undefined;
   const { user, isLoaded: isUserLoaded } = useUser();
 
   const userData = useQuery(api.users.getUserByClerkId, {
     clerkId: user?.id ?? '',
   });
-  const courseData = useQuery(api.courses.getCourseById, {
-    courseId,
-  });
+  const courseData = useQuery(
+    api.courses.getCourseById,
+    courseId ? { courseId } : 'skip'
+  );
 
   const userAccess = useQuery(
     api.users.getUserAccess,
-    userData
+    userData && courseId
       ? {
           userId: userData._id,
           courseId,
@@ -113,7 +124,7 @@ const CourseDetailPage = ({
                 <p className="text-2xl font-bold mb-4">
                   ${courseData.price.toFixed(2)}
                 </p>
-                <PurchaseButton courseId={courseId} />
+                <PurchaseButton courseId={courseId as Id<'courses'>} />
               </div>
             </div>
           )}
@@ -129,7 +140,7 @@ function CourseDetailSkeleton() {
     <div className="container mx-auto py-8 px-4">
       <Card className="max-w-4xl mx-auto">
         <CardHeader>
-          <Skeleton className="w-full h-[600px] rounded-md" />
+          <Skeleton className="w-full h-150 rounded-md" />
         </CardHeader>
         <CardContent>
           <Skeleton className="h-10 w-3/4 mb-4" />
